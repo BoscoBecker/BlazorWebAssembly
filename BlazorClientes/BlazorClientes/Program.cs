@@ -1,4 +1,3 @@
-using BlazorClientes.Client.Pages;
 using BlazorClientes.Components;
 using BlazorClientes.Context;
 using BlazorClientes.Repositories;
@@ -20,8 +19,6 @@ builder.Services.AddDbContext<ClienteContext>(opt =>
 builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
 
                                             
-
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseWebAssemblyDebugging();

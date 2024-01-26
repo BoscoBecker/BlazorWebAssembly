@@ -1,4 +1,4 @@
-﻿using BlazorClientes.Shared.Entities;
+using BlazorClientes.Shared.Entities;
 
 namespace BlazorClientes.Shared.Interfaces
 {
