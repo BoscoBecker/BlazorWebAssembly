@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Reflection.Metadata.Ecma335;
 
-namespace BlazorClientes.Shared.Entities;
+namespace BlazorClientes.Shared.Entities
+{
     public class Cliente { 
         public int ID { get; set; }
         [Required]
