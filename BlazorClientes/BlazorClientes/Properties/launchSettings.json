@@ -1,6 +1,9 @@
 {
   "$schema": "http://json.schemastore.org/launchsettings.json",
-  "DefaultConnection": "Data Source=DESKTOP-G0TT3JA\\SQLEXPRESS;Initial Catalog=DB; User ID=sa;Password=cidadao",
+  "BaseAddress": "https://localhost:7082",
+  "ConnectionStrings" {
+    "DefaultConnection": "Data Source=DESKTOP-G0TT3JA\\SQLEXPRESS;Initial Catalog=DB; User ID=sa;Password=cidadao;Trusted_Connection=True;TrustServerCertificate=True;"
+  },
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,

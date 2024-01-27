@@ -3,6 +3,7 @@ using BlazorClientes.Context;
 using BlazorClientes.Repositories;
 using BlazorClientes.Shared.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,13 +11,18 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
-
-var app = builder.Build();
 var connectionString = builder.Configuration
                               .GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ClienteContext>(opt =>
-                                               opt.UseSqlServer(connectionString));
+                                              opt.UseSqlServer(connectionString));
 builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
+
+//builder.Services.AddScoped(http => new HttpClient
+//{
+//    BaseAddress = new Uri(builder.Configuration.GetSection("BaseAddress"))
+//});
+
+var app = builder.Build();
 
                                             
 if (app.Environment.IsDevelopment())
