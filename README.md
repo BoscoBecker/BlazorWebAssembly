@@ -1,5 +1,9 @@
 Projeto realizado usando WebAssmembly e dotnet 8 e blazor, server side e clientside
 
+Novo Layout
+
+![image](https://github.com/BoscoBecker/BlazorWebAssembly/assets/6303278/3455ac4a-95c0-4ab1-a420-3a66079ab8c0)
+
 Página inicial
 
 ![image](https://github.com/BoscoBecker/BlazorWebAssembly/assets/6303278/59b99d1c-1724-4c18-b85a-889803048b19)
