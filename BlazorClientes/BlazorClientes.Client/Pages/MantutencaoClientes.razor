@@ -30,7 +30,9 @@
                         <button type="submit" class="btn btn-primary mt-2"> Salvar</button>
                     </EditForm>
                 </div>
-
+                
+                <div class="@alertClass" role="alert">  Dados salvos com sucesso! </div>  
+                
                 <div class="card-footer">
                     Id: @ReturnCliente.ID <br />
                     Nome:@ReturnCliente.Nome <br />
@@ -41,7 +43,11 @@
         </div>
     </div>
 </div>
+
+
 @code {
+    private bool dadosSalvos = false;
+    private string alertClass => dadosSalvos ? "alert alert-success" : "alert alert-success d-none";
 
     public Cliente ClienteModel { get; set; } = new();
     [Parameter] public int Id { get; set; }
@@ -60,6 +66,13 @@
             ReturnCliente = await _clienteService.AddClienteAsync(ClienteModel);
             ClienteModel = new();
         }
+        dadosSalvos = true;
+
+        StateHasChanged();
+        await Task.Delay(3000);
+
+        dadosSalvos = false;
+        StateHasChanged();
     }
 
     protected override async Task OnParametersSetAsync()

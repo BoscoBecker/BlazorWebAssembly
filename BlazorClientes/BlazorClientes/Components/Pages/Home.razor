@@ -3,11 +3,62 @@
 <PageTitle>Blazor Cadastro e Manutenção de Clientes</PageTitle>
 
 
-<div class="jumbotron">
-    <h1 class="display-4">Cadastro de clientes usando .net 8+ Blazor</h1>
-    <hr class="my-4">
-    <p>Clique abaixo ou ao lado para Visualizar os clientes cadastrados</p>
-    <p class="lead">
-        <a class="btn btn-primary btn-lg" href="clientes" role="button">Clientes</a>
-    </p>
+<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+    <h1 class="display-4 fw-normal">Realize operações abaixo</h1>
+    <p class="fs-5 text-muted">
+        Nesta página feita em .NET 8 com blazor usando WebAssembly Server-side/Client-side é possivel realizar operações para manutenção dos clientes.</p>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+    <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Home</h4>
+            </div>
+            <div class="card-body">
+                @*< h1 class="card-title pricing-card-title">$0<small class="text-muted fw-light">/mo</small></h1> *@
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>* Página Inicial</li>
+                    <li>* Acesso na página lateral</li>
+                    <li>* Acesso a todas opções</li>
+                    <li>* Layout de fácil navegação</li>
+                </ul>
+                <a role="button" class="w-100 btn btn-lg btn-outline-primary" href="/">Home</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Listar Clientes</h4>
+            </div>
+            <div class="card-body">
+                @* <h1 class="card-title pricing-card-title">$15<small class="text-muted fw-light">/mo</small></h1> *@
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>* Listagem de Cliente</li>
+                    <li>* Tabela contendo Cliente</li>
+                    <li>* Quantidade de Clientes cadastrados</li>
+                    <li>* Help center access</li>
+                </ul>
+                <a role="button" class="w-100 btn btn-lg btn-primary" href="clientes">Listar</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm border-primary">
+            <div class="card-header py-3 text-white bg-primary border-primary">
+                <h4 class="my-0 fw-normal">Manutenção Clientes</h4>
+            </div>
+            <div class="card-body">
+                @* <h1 class="card-title pricing-card-title">$29<small class="text-muted fw-light">/mo</small></h1> *@
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>* Visualização de Clientes</li>
+                    <li>* Alteração de Clientes</li>
+                    <li>* Deletar Clientes</li>
+                    <li>* Atualização sem atualizar a página</li>
+                </ul>
+                <a role="button" class="w-100 btn btn-lg btn-primary" href="manutencaocliente">Manutenção</a>
+            </div>
+        </div>
+    </div>
 </div>
