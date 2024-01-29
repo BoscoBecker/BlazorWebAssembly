@@ -7,6 +7,7 @@
             <div class="card">
                 <div class="card">
                     <div class="card-header">
+                        <Strong>Clique ao lado para adicionar um novo cliente</Strong>
                         <button class="btn btn-primary float-end"
                                 @onclick="NavigateToAddClientePage">
                             Novo Cliente
@@ -16,7 +17,7 @@
                 @if (Clientes.Count > 0)
                 {
                     <div class="card-header">
-                        Lista de clientes
+                        Clientes cadastrados:  <strong>@Clientes.Count</strong>
                     </div>
                     <div class="card-body">
                         <table class="table table-striped">
@@ -37,8 +38,8 @@
                                         <td>@cliente.Email</td>
                                         <td>
                                             <div class="hstack gap-2">
-                                                <button class="btn  btn-info" @onclick="()=>Edit(cliente)"> Edita</button>
-                                                <button class="btn  btn-danger" @onclick="() => Delete(cliente.ID)"> Deleta</button>
+                                                <button class="btn  btn-info" @onclick="()=>Edit(cliente)"> Editar</button>
+                                                <button class="btn  btn-danger" @onclick="() => Delete(cliente.ID)"> Deletar</button>
                                             </div>
                                         </td>
                                     </tr>

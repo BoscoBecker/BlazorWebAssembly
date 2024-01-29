@@ -11,19 +11,22 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
+
 var connectionString = builder.Configuration
                               .GetConnectionString("DefaultConnection");
+
 builder.Services.AddDbContext<ClienteContext>(opt =>
-                                              opt.UseSqlServer(connectionString));
+                   opt.UseSqlServer(connectionString));
+
 builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
 
-//builder.Services.AddScoped(http => new HttpClient
-//{
-//    BaseAddress = new Uri(builder.Configuration.GetSection("BaseAddress"))
-//});
+builder.Services.AddScoped(http => new HttpClient
+{
+    BaseAddress = new Uri(builder.Configuration.GetSection("BaseAddress").Value!)
+});
+
 
 var app = builder.Build();
-
 
 if (app.Environment.IsDevelopment())
 {
@@ -35,7 +38,7 @@ else
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-
+app.UsePathBase("/");
 app.UseHttpsRedirection();
 
 app.UseStaticFiles();

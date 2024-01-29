@@ -7,9 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\Index.html" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\Blazor\BlazorClientes.Shared.csproj" />
     <ProjectReference Include="..\BlazorClientes.Client\BlazorClientes.Client.csproj" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.1">
       <PrivateAssets>all</PrivateAssets>
