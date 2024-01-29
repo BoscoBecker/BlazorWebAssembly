@@ -24,7 +24,7 @@ builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
 
 var app = builder.Build();
 
-                                            
+
 if (app.Environment.IsDevelopment())
 {
     app.UseWebAssemblyDebugging();

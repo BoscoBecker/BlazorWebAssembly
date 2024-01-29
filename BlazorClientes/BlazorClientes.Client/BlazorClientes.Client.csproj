@@ -9,11 +9,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Pages\ListaClientes.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\Blazor\BlazorClientes.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\ListaClientes.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\ListaClientes.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Pages\ListaClientes.razor" />
   </ItemGroup>
 
 </Project>

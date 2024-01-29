@@ -13,7 +13,7 @@ namespace BlazorClientes.Repositories
             _context = context;
         }
 
-        public async Task<Cliente> AddClienteAsyc(Cliente model)
+        public async Task<Cliente> AddClienteAsync(Cliente model)
         {
             if (model is null) return null;
             var chk = await _context.Clientes.Where(_ => _.Nome.ToLower()

@@ -15,32 +15,30 @@ namespace BlazorClientes.Client.Services
             this.httpClient = httpClient;
             _options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
         }
-
-        public async Task<Cliente> AddClienteAsyc(Cliente model)
+        public async Task<Cliente> AddClienteAsync(Cliente model)
         {
             var cliente = await httpClient.PostAsJsonAsync("api/CLiente/Add-Cliente", model);
-            //var response = await cliente.Content.ReadFromJsonAsync<Cliente>();
             return await cliente.Content.ReadFromJsonAsync<Cliente>();
         }
-
-        public Task<Cliente> DeleteClienteAsync(int clienteId)
+        public async Task<Cliente> DeleteClienteAsync(int clienteId)
         {
-            throw new NotImplementedException();
+            var cliente = await httpClient.DeleteAsync($"api/Delete-Cliente/{clienteId}");
+            return await cliente.Content.ReadFromJsonAsync<Cliente>();
         }
-
-        public Task<List<Cliente>> GetAllCLientesAsync()
+        public async Task<List<Cliente>> GetAllCLientesAsync()
         {
-            throw new NotImplementedException();
+            var cliente = await httpClient.GetAsync("api/Cliente/Clientes");
+            return await cliente.Content.ReadFromJsonAsync<List<Cliente>>();
         }
-
-        public Task<Cliente> GetCLienteByID(int clienteId)
+        public async Task<Cliente> GetCLienteByID(int clienteId)
         {
-            throw new NotImplementedException();
+            var cliente = await httpClient.GetAsync($"api/cliente/{clienteId}");
+            return await cliente.Content.ReadFromJsonAsync<Cliente>();
         }
-
-        public Task<Cliente> UpdateClienteAsync(Cliente Model)
+        public async Task<Cliente> UpdateClienteAsync(Cliente model)
         {
-            throw new NotImplementedException();
+            var cliente = await httpClient.PutAsJsonAsync("api/Update-Cliente", model);
+            return await cliente.Content.ReadFromJsonAsync<Cliente>();
         }
     }
 }

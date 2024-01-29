@@ -29,7 +29,7 @@ namespace BlazorClientes.Controllers
         }
         [HttpPost("Add-Cliente")]
         public async Task<ActionResult<List<Cliente>>> AddClienteAsyc(Cliente model) {
-            var cliente = await _clienteRepository.AddClienteAsyc(model);
+            var cliente = await _clienteRepository.AddClienteAsync(model);
             return Ok(cliente);
         }
 
